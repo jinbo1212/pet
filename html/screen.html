@@ -217,7 +217,9 @@
 			rows: 10,
 			page: 1
 		}
-		Ajax("Api/Goods/SearchShopList", "POST", data, function (result) {
+		AjaxPost(data);
+		function AjaxPost(par){
+			Ajax("Api/Goods/SearchShopList", "POST", par, function (result) {
 			if (result.Code == 1) {
 				var html = "";
 				for (var i in result.Data.list) {
@@ -237,6 +239,7 @@
 				details();
 			}
 		})
+		}
 
 		//跳转到详细页面
 		function details() {
@@ -254,7 +257,19 @@
 		})
 		$(".screen-tab a").on('tap', function () {
 			var index = $(this).index();
-			if (index == 3 && $(".list-template-one li").length > 0) {
+			if(index==0){
+				//综合
+
+			}else if(index==1){
+
+			}else if(index==2){
+				//价格
+				alert(index);
+				var parm = {keyWord:param,rows:10,page:1,oPrice:-1};
+				AjaxPost(parm);
+
+			}else if (index == 3 && $(".list-template-one li").length > 0) {
+				//排列
 				if ($(".list-template-one li").hasClass("arrangeli")) {
 					$(".list-template-one li").removeClass("arrangeli");
 				    $(".list-template-one li a>img").removeClass("arrangeimg").addClass("list-li");
@@ -263,7 +278,8 @@
 					$(".list-template-one li").addClass("arrangeli");
 					$(".list-template-one li a>img").removeClass("list-li").addClass("arrangeimg");
 				}
-
+			}else if(index==4){
+				//筛选
 			}
 		})
 
