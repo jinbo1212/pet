@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/shopping.css" />
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav shopping-header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">购物车</h1>
+	</header>
+	<div class="mui-content">
+		<div class="no-goods">
+			<div class="no-goods-img"></div>
+			<div class="no-goods-txt">您的购物车还是空的,赶紧给爱宠挑点什么吧！</div>
+		</div>
+		<ul class="shopping-list" style="display: none;">
+			<!-- <li class="pet-clearfix">
+				<div class="checkbox mui-pull-left"></div>
+				<a href="javascript:void(0);" class="mui-pull-left">
+		    			<img src="http://img-new.boqiicdn.com/Data/Shop/0/4/487/shoppicpath11456457022_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+		    			<p class="shopping-name">法国皇家ROYAL CANIN 小型犬离乳期奶糕1kg MIS30</p>
+		    			<strong class="shopping-price">63.00元</strong>
+		    			<div class="mui-numbox">
+							  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+							  <input class="mui-numbox-input" type="number" value="3"/>
+							  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+							</div>
+		    		</a>
+			</li> -->
+		</ul>
+		<div class="footer pet-clearfix">
+			<div class="mui-pull-left">
+				<p><span class="check_all"></span>全选</p>
+				<div class="mui-pull-right">
+					<p>总金额：<span>333元</span></p>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="mui-pull-right">结算</a>
+		</div>
+	</div>
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/Ajax.js"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.ready(function () {
+			var uid = window.sessionStorage.getItem("uid") ? window.sessionStorage.getItem("uid") : 0;
+			var cookieid = window.sessionStorage.getItem("cookieid");
+			var data = {
+				cookieid: cookieid,
+				uid: uid,
+				isall: 0,
+				cartlist: "[{goods_id:0}]"
+			}
+			Ajax("Api/ShopCar/DeleteShopCar", "POST", { data }, function (result) {
+				console.log(result)
+			});
+			// 查询商品
+			Ajax("Api/ShopCar/GetShopCarList", "POST", { cookieid: cookieid, uid: uid }, function (result) {
+				if (result.Code == 1) {
+					if (result.Data.length == 0) {
+						$(".shopping-list").hide();
+						$(".no-goods").show();
+						$(".footer .mui-pull-left div p span").html(0);
+					} else {
+						var html = "";
+						for (var key in result.Data) {
+							html += '<li class="pet-clearfix">'
+								+ '<div class="checkbox mui-pull-left" ></div >'
+								+ '<a href="javascript:void(0);" class="mui-pull-left">'
+								+ '<img src="' + result.Data[key].goods_img + '" alt="" />'
+								+ '<p class="shopping-name">' + result.Data[key].goods_name + '</p>'
+								+ '<strong class="shopping-price">' + result.Data[key].promote_price + '元</strong>'
+								+ '<div class="mui-numbox"  data-numbox-min="1">'
+								+ '<button class="mui-btn mui-btn-numbox-minus" type= "button" > -</button >'
+								+ '<input class="mui-input-numbox" type="number" value="' + result.Data[key].number + '" />'
+								+ '<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>'
+								+ '</div >'
+								+ '</a >'
+								+ '</li > '
+						}
+						$(".shopping-list").html(html);
+						mui(".mui-numbox").numbox();
+						$(".shopping-list").show();
+						$(".no-goods").hide();
+						total();
+					}
+					active();
+				}
+			});
+			// 点击选中状态
+			function active() {
+				$(".shopping-list li").on("tap", function () {
+					if ($(this).find(".checkbox").hasClass("active")) {
+						$(this).find(".checkbox").removeClass("active");
+					} else {
+						$(this).find(".checkbox").addClass("active");
+					}
+					total();
+				})
+				$(".shopping-list li input").on("tap", function () {
+					total();
+					event.stopPropagation();
+				})
+				$(".shopping-list li button").on("tap", function () {
+					total();
+					event.stopPropagation();
+				})
+				$(".shopping-list li input").on("input", function () {
+					total();
+				})
+				$(".shopping-list li input").on("blur", function () {
+					total();
+				})
+			}
+			// 计算总金额
+			function total() {
+				var list = $(".shopping-list li");
+				console.log(list.length)
+				var total = 0;
+				for (var key = 0; key < list.length; key++) {
+					if (list.eq(key).find(".checkbox").hasClass("active")) {
+						var price = list.eq(key).find("strong").html().split("元")[0];
+						price = Number(price == 'null' ? 0 : price);
+						var number = Number(list.eq(key).find("input").val());
+						total += (price * number);
+					}
+				}
+				$(".footer .mui-pull-left div p span").html(total + "元");
+			}
+			// 点击全选
+			$(".footer div>p").on("tap", function () {
+				if ($(this).find("span").hasClass("active")) {
+					$(this).find("span").removeClass("active");
+					$(".shopping-list li").find(".checkbox").removeClass("active");
+				} else {
+					$(this).find("span").addClass("active");
+					$(".shopping-list li").find(".checkbox").addClass("active");
+				}
+				total();
+			})
+
+
+
+
+			var url = window.location.href;
+			if (url.indexOf("id") != -1) {
+				//					alert(11)
+				$(".shopping-list").show();
+				$(".no-goods").hide();
+			}
+			$(".footer >a").on("tap", function () {
+				mui.openWindow({
+					url: 'confirm.html',
+					extras: {
+					}
+				});
+			})
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+/*筛选列表页header start*/
+.screen-header{
+  background: #df231c;
+}
+.screen-header>a{
+  color:#fff;
+}
+.screen-header h1 input{
+  height:30px;
+  border:none;
+  font-size:14px;
+  margin:0;
+}
+.screen-header h1 div{
+  position: relative;
+}
+.screen-header h1 div a.mui-icon{
+  position: absolute;
+  right:2px;
+  top:10px;
+  z-index: 9999;
+}
+/*筛选列表页header end*/
+
+/*筛选tab start*/
+.screen-tab{
+  border:none;
+  background: #fff;
+  padding:8px 0;
+  position: absolute;
+  top:44px;
+  width:100%;
+}
+.screen-tab .mui-control-item{
+  border:none;
+  color:#383838;
+  font-size:14px;
+  float: left;
+  width:21%;
+  line-height: 16px;
+  border-left:1px solid #dbdbdb;
+}
+.screen-tab .mui-active.mui-active{
+  background: none;
+  color:#df231c;
+}
+.screen-tab .mui-control-item:nth-child(4){
+  width:16%;
+}
+.screen-tab .mui-control-item:nth-child(4) i{
+  font-size: 16px;
+  vertical-align: middle;
+}
+.screen-tab .mui-control-item i{
+  font-size:14px;
+}
+/*筛选tab end*/
+.mui-bar-nav ~ .mui-content .mui-pull-top-pocket{
+  top: 77px !important;
+}
+.mui-off-canvas-wrap.mui-active .mui-off-canvas-backdrop{
+  z-index: 100000;
+}

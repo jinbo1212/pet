@@ -1,0 +1,8 @@
+/*清除浮动*/
+.pet-clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.pet-clearfix{zoom:1;}
+ol,ul{list-style:none;}
+/*为底部导航留占位*/
+.pet-content{
+  padding-bottom:50px;
+}

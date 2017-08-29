@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../css/login.css" />
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav login-header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">新用户注册</h1>
+		<a class="mui-pull-right mui-icon">登录</a>
+	</header>
+	<div class="mui-content register">
+		<div class="mui-input-group">
+			<div class="mui-input-row">
+				<input type="text" placeholder="手机号" class="mui-input-clear" />
+			</div>
+			<div class="mui-input-row">
+				<input type="password" placeholder="6~20位密码，数字或字母" class="mui-input-password" />
+			</div>
+			<div class="mui-button-row">
+				<button>注册</button>
+			</div>
+			<p class="agreed">
+				<span></span> 我已阅读并同意 <a href="javascript:void(0);">《宠物网服务协议》</a>
+			</p>
+		</div>
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../js/Ajax.js"></script>
+	<script src="../module/layer_mobile/layer.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui.ready(function () {
+			//点击登录
+			$(".login-header a.mui-pull-right").on("tap", function () {
+				mui.openWindow({
+					url: 'login.html'
+				})
+			});
+			var isClick = false;
+			$(".register input.mui-input-clear").on("input", isCanClick);
+			$(".register input.mui-input-password").on("input", isCanClick);
+			function isCanClick() {
+				if ($(".register input.mui-input-clear").val() != "" && $(".register input.mui-input-password").val() != "") {
+					isClick = true;
+					$(".register .mui-button-row button").css("color", "#fff");
+				} else {
+					isClick = false;
+					$(".register .mui-button-row button").css("color", "#ffd2ce");
+				}
+			}
+			function validation() {
+				var mobile = $(".register input.mui-input-clear").val();
+				var paw = $(".register input.mui-input-password").val();
+				if (!(/^1[34578]\d{9}$/.test(mobile)) || !(/^[a-zA-Z0-9]{6,20}$/.test(paw))) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+			$(".register .mui-button-row button").on("tap", function () {
+				if (isClick) {
+					if (validation()) {
+						var data = {
+							Mobile: $(".register input.mui-input-clear").val(),
+							UserPwd: $(".register input.mui-input-password").val(),
+							Email: "",
+							RegistIp: ""
+						}
+						Ajax("Api/User/UserRegister", "POST", data, function (result) {
+							if (result.Code == 1) {
+								mui.openWindow({
+									url: '../index.html'
+								})
+							} else {
+								layerData(result.Message);
+							}
+						})
+					} else {
+						layerData("手机或密码格式错误");
+					}
+				} else {
+					layerData("请输入手机号和密码");
+				}
+			})
+			function layerData(msg) {
+				layer.open({
+					content: msg
+					, skin: 'msg'
+					, time: 2 //2秒后自动关闭
+				});
+			}
+
+		})
+	</script>
+</body>
+
+</html>

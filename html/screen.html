@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/Ajax.js"></script>
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../js/iconfont/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="../css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="../css/list.css" />
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+	<style type="text/css">
+		#wrapper {
+			top: 77px;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			background: #fff;
+			height: 90%;
+		}
+		/*上拉加载,下拉刷新样式*/
+
+		.pullDownLabel,
+		.pullUpLabel {
+			line-height: 40px !important;
+			text-align: center !important;
+			color: #999 !important;
+			font-size: 12px !important;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 侧滑导航根容器 -->
+	<div class="mui-off-canvas-wrap mui-draggable">
+		<!-- 菜单容器 -->
+		<aside class="mui-off-canvas-right">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<!-- 菜单具体展示内容 -->
+					...
+				</div>
+			</div>
+		</aside>
+		<header class="mui-bar mui-bar-nav screen-header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">
+				<div>
+					<input type="text" id="searchBar" placeholder="请输入搜索关键字" />
+					<a class="mui-pull-right mui-icon mui-icon-search"></a>
+				</div>
+			</h1>
+			<a class="mui-pull-right mui-icon iconfont icon-gouwuche2"></a>
+		</header>
+		<!-- 主页面容器 -->
+		<div class="mui-content mui-inner-wrap screen-content">
+
+			<div class="mui-segmented-control screen-tab">
+				<a class="mui-control-item mui-active">综合<i class="mui-icon mui-icon-arrowup"></i></a>
+				<a class="mui-control-item">销量</a>
+				<a class="mui-control-item">价格<i class="mui-icon mui-icon-arrowup"></i></a>
+				<a class="mui-control-item"><i class="mui-icon iconfont icon-danpin"></i></a>
+				<a class="mui-control-item mui-action-menu">筛选</a>
+			</div>
+			<div id="wrapper">
+				<div>
+					<ul class="list-template-one">
+						<!--<li>
+							<a class="pet-clearfix">
+							<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+							<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+							</div>
+							</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>
+						<li>
+							<a class="pet-clearfix">
+						<img src="http://img-new.boqiicdn.com/Data/Shop/1/156/15685/shoppicpath11432018753_y.jpg?imageView2/2/w/375/h/375/q/100/interlace/0" alt="" />
+						<div class="mui-pull-left">
+							<p class="mui-ellipsis">怡亲多可特 白毛犬专用香波沐浴露 950ml</p>
+							<p class="list-icon"><span>直降</span></p>
+							<div class="list-template-one-div pet-clearfix">
+								<p>25.00元</p>
+								<p>评价<span>33</span>已售<span>111</span></p>
+							</div>							
+						</div>
+					</a>
+						</li>-->
+					</ul>
+				</div>
+			</div>
+			<div class="mui-off-canvas-backdrop"></div>
+		</div>
+
+	</div>
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<!--<script src="../js/iscroll.js"></script>-->
+<!--<script src="../js/pullToRefresh.js"></script>-->
+<script src="../module/iscroll.js" type="text/javascript" charset="utf-8"></script>
+<script src="../module/pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+	mui.ready(function () {
+		// 上拉加载
+		refresher.init({
+			id: "wrapper",
+			pullDownAction: Refresh,
+			pullUpAction: Load
+		});
+
+		function Refresh() {
+			setTimeout(function () {
+				wrapper.refresh();
+			}, 1000)
+		}
+
+		function Load() {
+			setTimeout(function () {
+				wrapper.refresh();
+			}, 1000)
+		}
+
+		var param = window.sessionStorage.getItem("keyword");
+		$("#searchBar").val(param);
+		var data = {
+			keyword: param,
+			rows: 10,
+			page: 1
+		}
+		Ajax("Api/Goods/SearchShopList", "POST", data, function (result) {
+			if (result.Code == 1) {
+				var html = "";
+				for (var i in result.Data.list) {
+					html += '<li>' +
+						'<a class="pet-clearfix " data-url="details.html?goodsID =' + result.Data.list[i].goods_id + '">' +
+						'<img class="list-li" src="' + result.Data.list[i].goods_img + '" alt="" />' +
+						'<div class="mui-pull-left">' +
+						'<p class="mui-ellipsis">' + result.Data.list[i].goods_name + '</p>' +
+						'<div class="list-template-one-div pet-clearfix">' +
+						'<p>' + result.Data.list[i].shop_price + '元</p>' +
+						'</div>' +
+						'</div>' +
+						'</a>' +
+						'</li>'
+				}
+				$(".list-template-one").html(html);
+				details();
+			}
+		})
+
+		//跳转到详细页面
+		function details() {
+			$("#wrapper ul li a").on("tap", function () {
+				var url = $(this).attr("data-url");
+				jumpPage(url);
+			})
+		}
+		//搜索
+		$("#searchBar").keydown(function (e) {
+			if (e.keyCode == 13) {
+				window.sessionStorage.setItem("keyword", $("#searchBar").val());
+				window.location.reload();
+			}
+		})
+		$(".screen-tab a").on('tap', function () {
+			var index = $(this).index();
+			if (index == 3 && $(".list-template-one li").length > 0) {
+				if ($(".list-template-one li").hasClass("arrangeli")) {
+					$(".list-template-one li").removeClass("arrangeli");
+				    $(".list-template-one li a>img").removeClass("arrangeimg").addClass("list-li");
+
+				} else {
+					$(".list-template-one li").addClass("arrangeli");
+					$(".list-template-one li a>img").removeClass("list-li").addClass("arrangeimg");
+				}
+
+			}
+		})
+
+	})
+</script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/index.css",
+			"iconfont/iconfont.woff",
+			"iconfont/iconfont.css",
+			"js/swipe/swiper-3.4.0.min.css",
+			"js/iconfont/iconfont.css",
+			"css/common.css",
+			"js/jquery-1.9.1.min.js",
+			"js/iconfont/iconfont.woff",
+			"js/swipe/swiper-3.4.0.min.js",
+			"js/simpScroller.js",
+			"js/slider.js",
+			"html/screen.html"
+		],
+		"refer": [
+			"html/screen.html"
+		]
+	},
+	"html/screen.html": {
+		"resources": [
+			"js/iconfont/iconfont.css",
+			"css/common.css",
+			"js/mui.min.js",
+			"js/jquery-1.9.1.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"js/iconfont/iconfont.woff",
+			"css/screen.css",
+			"html/list.html",
+			"css/list.css",
+			"html/ifram.html"
+		],
+		"refer": [
+			"html/list.html",
+			"html/sidemenu.html"
+		]
+	},
+	"html/list.html": {
+		"resources": [
+			"js/iconfont/iconfont.css",
+			"css/common.css",
+			"js/mui.min.js",
+			"js/jquery-1.9.1.min.js",
+			"css/mui.min.css",
+			"css/screen.css",
+			"css/list.css"
+		]
+	},
+	"html/sidemenu.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
+}

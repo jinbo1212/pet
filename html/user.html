@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/user.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav user-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">个人中心</h1>
+		</header>
+		<div class="mui-content user-cont">
+		    <div class="my-account">
+		    	<div class="my-account-cont pet-clearfix">
+		    		<a href="javascript:void(0);" class="my-photo mui-pull-left">
+		    			<img src="https://img.boqiicdn.com/Data/Public/none1_b.gif" alt="" />
+		    		</a>
+		    		<div class="my-name mui-pull-left">
+		    			<p>mobi7306687</p>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="my-order">
+		    	<h3>
+		    		我的订单 
+		    		<a href="javascript:void(0);" class="mui-pull-right">查看更多></a>
+		    	</h3>
+		    	
+		    	<ul class="my-order-list pet-clearfix">
+		    		<li>
+		    			<i></i>
+		    			代付款
+		    		</li>
+		    		<li>
+		    			<i></i>
+		    			待发货
+		    		</li>
+		    		<li>
+		    			<i></i>
+		    			待收货
+		    		</li>
+		    		<li>
+		    			<i></i>
+	    				待评价
+		    		</li>
+		    	</ul>
+		    </div>
+	    	<a class="my-address" href="javascript:void(0);">
+	    		我的收获地址
+	    		<span class="mui-pull-right"></span>
+	    	</a>	
+	    	<button class="exit">退出登录</button>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.ready(function(){
+//				点击跳转到订单页
+				$(".my-order-list li").on("tap",function(){
+					mui.openWindow({
+						url:"order.html"
+					})
+				})
+//				跳转到收货地址页
+				$(".my-address").on("tap",function(){
+					mui.openWindow({
+						url:"address.html"
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../css/login.css" />
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav login-header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">登录</h1>
+		<a class="mui-pull-right mui-icon">注册</a>
+	</header>
+	<div class="mui-content login">
+		<div class="mui-input-group">
+			<div class="mui-input-row">
+				<input type="text" placeholder="手机号" class="mui-input-clear" />
+			</div>
+			<div class="mui-input-row">
+				<input type="password" placeholder="密码" class="mui-input-password" />
+			</div>
+			<div class="mui-button-row">
+				<button>登录</button>
+			</div>
+			<a class="forget mui-pull-right">忘记密码?</a>
+		</div>
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../js/Ajax.js"></script>
+	<script src="../module/layer_mobile/layer.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui.ready(function () {
+			var isClick = false;
+			$(".login input.mui-input-clear").on("input", isCanClick);
+			$(".login input.mui-input-password").on("input", isCanClick);
+			// 手机号码验证
+			function validation() {
+				var mobile = $(".login input.mui-input-clear").val();
+				if (!(/^1[34578]\d{9}$/.test(mobile))) {
+					// alert("手机号码有误，请重填");  
+					return false;
+				} else {
+					return true;
+				}
+			};
+			// 判断是否可以点击
+			function isCanClick() {
+				if ($(".login input.mui-input-clear").val() != "" && $(".login input.mui-input-password").val() != "") {
+					isClick = true;
+					$(".login .mui-button-row button").css("color", "#fff");
+				} else {
+					$(".login .mui-button-row button").css("color", "#ffd2ce");
+				}
+			}
+			// 点击登录时
+			$(".login .mui-button-row button").on("tap", function () {
+				if (isClick) {
+					if (validation()) {
+						var data = {
+							Phone: $(".login input.mui-input-clear").val(),
+							PassWord: $(".login input.mui-input-password").val()
+						}
+						Ajax("Api/User/Login", "POST", data, function (result) {
+							if (result.Code == 1) {
+								window.sessionStorage.setItem("uid", result.Data.uid);
+								window.sessionStorage.setItem("username", result.Data.username);
+								mui.openWindow({
+									url: '../index.html'
+								})
+							} else {
+								layerData(result.Message);
+							}
+						})
+					} else {
+						layerData("请输入正确的手机号");
+					}
+				} else {
+					layerData('请输入手机号和密码');
+				}
+			})
+			function layerData(msg) {
+				layer.open({
+					content: msg
+					, skin: 'msg'
+					, time: 2 //2秒后自动关闭
+				});
+			}
+			//点击注册时
+			$(".login-header a.mui-pull-right").on("tap", function () {
+				mui.openWindow({
+					url: 'register.html'
+				})
+			})
+		})
+	</script>
+</body>
+
+</html>

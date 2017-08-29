@@ -1,0 +1,88 @@
+/* 
+* @Author: Marte
+* @Date:   2017-06-24 10:40:22
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-06-24 13:10:21
+*/
+html,body{
+    background: #fff;
+}
+body{
+    padding-bottom:50px;
+}
+.confirm-header{
+    background:#fff;
+}
+.confirm-header a{
+    color:#333;
+}
+.confirm .address{
+    background: #fbf6f1;
+    padding: .892em;
+    border-bottom: 8px solid #dbdbdb;
+}
+.confirm .address a>p:last-child{
+    margin-bottom:0;
+}
+.confirm .goods{
+    padding:6px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.confirm .goods img{
+    width: 4.286em;
+    height: 4.286em;
+    float: left;
+    margin-right: .714em;
+}
+.confirm .goods .goods-num{
+    margin-top:2em;
+    color:#333;
+    font-size:14px;
+}
+.confirm .goods .goods-num span:first-child{
+    color:#df231c;
+}
+.confirm .confirm-list{
+    margin:0;
+    padding:0;
+    background:#fff;
+}
+.confirm .confirm-list li{
+    font-size: 14px;
+    padding: 11px 15px;
+    border-bottom:1px solid #ddd;
+}
+.confirm .confirm-list li .button{
+    line-height:30px;
+}
+.confirm .confirm-list textarea{
+    border: none;
+    background: #ddd;
+    min-height: 100px;
+    color: #333;
+}
+.confirm .footer{
+    height:50px;
+    line-height:50px;
+    position: fixed;
+    bottom:0;
+    width:100%;
+}
+.confirm .footer p{
+    width:70%;
+    height:100%;
+    background: #000;
+    opacity: .7;
+    padding-left:10%;
+}
+.confirm .footer p span{
+    color:#fff;
+    margin-left:4px;
+}
+.confirm .footer a{
+    width:30%;
+    height:100%;
+    background:#fc4a00;
+    color:#fff;
+    text-align:center;
+}

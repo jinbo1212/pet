@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<script src="js/mui.min.js"></script>
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="js/iconfont/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="js/swipe/swiper-3.4.0.min.css" />
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</head>
+
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<div class="mui-input-row mui-search">
+			<input type="search" id="searchBar" class="mui-input-clear" placeholder="">
+		</div>
+		<a class="mui-pull-right iconfont icon-gouwuche2"></a>
+	</header>
+	<div class="mui-content pet-content">
+		<!--轮播图start-->
+		<div class="swiper-container swipe-wrap">
+			<div class="swiper-wrapper">
+				<!-- <a href="javascript:void(0)" class="swiper-slide">
+                <img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath1496890057.jpg"  alt="" />
+            </a>
+				<a href="javascript:void(0)" class="swiper-slide">
+                <img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath1495438934.jpg"  alt="" />
+            </a>
+				<a href="javascript:void(0)" class="swiper-slide">
+                <img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath1496199094.jpg"  alt="" />
+            </a>  -->
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--轮播图 end-->
+		<!--tab选项卡 start-->
+		<div id="slider" class="mui-slider pet-tab">
+			<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item mui-active" href="#item1">狗狗</a>
+				<a class="mui-control-item" href="#item2">猫猫</a>
+				<a class="mui-control-item" href="#item3">小宠</a>
+				<a class="mui-control-item" href="#item4">水族 </a>
+			</div>
+			<div id="sliderProgressBar" class="mui-slider-progress-bar"></div>
+			<div class="mui-slider-group">
+				<!-- <div id="item1" class="mui-slider-item mui-control-content mui-active pet-clearfix">
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>狗粮</span>
+	             	</a>
+					<a href="javascript:void(0)" class="pet-more">
+	             		<i></i>
+	             		<span>更多</span>
+	             	</a>
+				</div>
+				<div id="item2" class="mui-slider-item mui-control-content pet-clearfix">
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>猫粮</span>
+	             	</a>
+					<a href="" class="pet-more">
+	             		<i></i>
+	             		<span>更多</span>
+	             	</a>
+				</div>
+				<div id="item3" class="mui-slider-item mui-control-content pet-clearfix">
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>兔兔用品</span>
+	             	</a>
+					<a href="" class="pet-more">
+	             		<i></i>
+	             		<span>更多</span>
+	             	</a>
+				</div>
+				<div id="item4" class="mui-slider-item mui-control-content pet-clearfix">
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="">
+	             		<img src="http://img.boqiicdn.com/Data/Shop/0/0/1/shopmobile_index_icon1493101244.png" alt="" />
+	             		<span>水族箱</span>
+	             	</a>
+					<a href="" class="pet-more">
+	             		<i></i>
+	             		<span>更多</span>
+	             	</a>
+				</div> -->
+			</div>
+		</div>
+		<!--tab选项卡 end-->
+
+		<!--热门分类 start-->
+		<div class="pet-list">
+			<div class="pet-list-item">
+				<h1>热卖清单</h1>
+				<a href="">
+	    			<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493258113_y.jpg" alt="" />
+	    		</a>
+				<div class="pet-list-template1 pet-clearfix">
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493258314_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath21493258314_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493258820_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath21493258820_y.jpg" alt="" />
+	    			</a>
+				</div>
+			</div>
+			<div class="pet-list-item">
+				<h1>品质精选</h1>
+				<a href="">
+	    			<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493023984_y.jpg" alt="" />
+	    		</a>
+				<div class="pet-list-template2 pet-clearfix">
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493024095_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath21493258314_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11493258820_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath21493258820_y.jpg" alt="" />
+	    			</a>
+					<a href="">
+	    				<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath21493024151_y.jpg" alt="" />
+	    			</a>
+				</div>
+			</div>
+		</div>
+		<!--热门分类 end-->
+
+		<!--热门活动 start-->
+		<div class="pet-hot-activity">
+			<h1>热门活动</h1>
+			<div class="pet-hot-activity-item">
+				<!-- <a href="">
+	    			<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11492667596_y.jpg" alt="" />
+	    		</a> -->
+				<div class="pet-scroll">
+					<ul class="pet-clearfix">
+						<!-- <li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="pet-hot-activity-item">
+				<a href="">
+	    			<img src="http://img.boqiicdn.com/Data/Shop/0/0/0/shoppicpath11492667596_y.jpg" alt="" />
+	    		</a>
+				<div class="pet-scroll">
+					<ul class="pet-clearfix">
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+						<li>
+							<a href="">
+									<img src="http://img-new.boqiicdn.com/Data/Shop/2/202/20275/shoppicpath11464078777_y.jpg?imageView2/2/w/225/h/225/q/100/interlace/0" alt="" />
+									<p>曼劳 立体派牛肉口味200g 训练 奖励 狗零食 </p>
+									<span>29.90 元</span>
+								</a>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+		<!--热门活动 end-->
+	</div>
+	<!--底部导航-->
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active">
+	        <span class="mui-icon mui-icon-home"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+		<a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-phone"></span>
+	        <span class="mui-tab-label">发现</span>
+	    </a>
+		<a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-email"></span>
+	        <span class="mui-tab-label">商城</span>
+	    </a>
+		<a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-gear"></span>
+	        <span class="mui-tab-label">服务</span>
+	    </a>
+		<a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-person"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/swipe/swiper-3.4.0.min.js"></script>
+	<script src="js/Ajax.js"></script>
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script type="text/javascript">
+		mui.ready(function () {
+			// 获取IP地址，作为cookieid
+			window.sessionStorage.setItem("cookieid", returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+			// 获取首页轮播图
+			Ajax("Api/Active/GetSlideList", "GET", "", function (result) {
+				if (result.Code == 1) {
+					var html = "";
+					for (var i in result.Data) {
+						html += '<a href="' + result.Data[i].ad_link + '" class="swiper-slide"><img src= "' + result.Data[i].ad_code +
+							'"  alt= "' + result.Data[i].ad_name + '" /></a >'
+					}
+					$(".swiper-container .swiper-wrapper").html(html);
+					swiperInitial();
+				}
+			});
+			// 分类列表
+			Ajax("Api/Goods/GetCategoryList", "POST", {
+				parentid: 0
+			}, function (result) {
+				if (result.Code == 1) {
+					var html = "",
+						html2 = "",
+						catIdArr = [];
+					for (var key in result.Data) {
+						html += '<a class="mui-control-item" href="#item' + result.Data[key].cat_id + '">' + result.Data[key].cat_name + '</a>';
+						catIdArr.push(result.Data[key].cat_id);
+					}
+					$(".pet-tab .mui-segmented-control-inverted").html(html);
+					for (var i in catIdArr) {
+						// 获取子类
+						html2 = '<div id="item' + catIdArr[i] + '" class="mui-slider-item mui-control-content pet-clearfix"></div>';
+						$(".pet-tab .mui-slider-group").append(html2);
+						Ajax("Api/Goods/GetCategoryList", "POST", {
+							parentid: catIdArr[i]
+						}, function (result) {
+							if (result.Code == 1) {
+								var html = "";
+								for (var key in result.Data) {
+									html += '<a href="javascript:void(0)"><img src="' + result.Data[key].pic_url + '" alt="" /><span>' + result.Data[key].cat_name + '</span></a>'
+								}
+								$(".pet-tab .mui-slider-group").find("#item" + result.Data[0].parent_id).html(html);
+								classifyBtn();
+							}
+						})
+					}
+					var classifyNum = $(".pet-tab .mui-segmented-control-inverted").children().length;
+					$("#sliderProgressBar").css("width", 100 / classifyNum + "%");
+					$(".pet-tab .mui-segmented-control-inverted a").eq(0).addClass('mui-active');
+					$(".pet-tab .mui-slider-group .mui-slider-item").eq(0).addClass('mui-active');
+					mui('#slider').slider();
+				}
+			});
+			// 热门活动
+			Ajax("Api/Goods/GetHotShopList", "POST", { rows: 10, page: 1 }, function (result) {
+				if (result.Code == 1) {
+					var html = '';
+					for (var key in result.Data.list) {
+						html += '<li><a data-url="html/details.html?goodsID=' + result.Data.list[key].goods_id + '"><img src="' + result.Data.list[key].goods_thumb + '" alt="" /><p>' + result.Data.list[key].goods_name + '</p><span>' + result.Data.list[key].goods_number + '元</span></a></li>';
+					}
+					$(".pet-scroll ul").html(html);
+					hottap();
+				}
+			});
+			// 热门活动商品点击
+			function hottap() {
+				$(".pet-scroll ul li").on("tap", function () {
+					var url = $(this).find("a").attr("data-url");
+					jumpPage(url);
+				})
+			}
+			//banner轮播图初始化
+			function swiperInitial() {
+				var swiper = new Swiper('.swiper-container', {
+					autoplay: 3000, //可选选项，自动滑动
+					loop: true,
+					speed: 1000,
+					pagination: '.swiper-pagination',
+					autoplayDisableOnInteraction: false,
+				});
+			}
+			//计算横向宽度
+			$(".pet-scroll ul").each(function (index, even) {
+				var l = $(this).find("li").length;
+				$(this).width(l * 100);
+			})
+
+			//跳转到列表页
+			function classifyBtn() {
+				$(".pet-tab .mui-slider-item a").unbind("tap").on("tap", function () {
+					var classifyName = $(this).find("span").html();
+					window.sessionStorage.setItem("keyword",classifyName);
+					jumpPage('html/screen.html');
+				})
+			}
+
+			//	购物车
+			$("#header a.mui-pull-right").on("tap", function () {
+				webview = mui.openWindow({
+					url: 'html/shopping.html',
+					extras: {}
+				});
+			})
+			function jumpPage(url) {
+				var webview = mui.openWindow({
+					url: url,
+					extras: {
+					}
+				});
+			}
+
+			//搜索商品
+			$("#searchBar").keydown(function (e) {
+				if (e.keyCode == 13) {
+					window.sessionStorage.setItem("keyword", $("#searchBar").val())
+					webview = mui.openWindow({
+						url: 'html/screen.html',
+						extras: {}
+					});
+
+
+				}
+			})
+
+
+		})
+	</script>
+</body>
+
+</html>

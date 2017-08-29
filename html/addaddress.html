@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/address.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/addadress.css"/>
+	</head>
+	<body>
+<form class=" hyg-g-input-group hyg-g-shipAddress-form" action="/user/userinfo/addaddr" method="post">
+		<header class="mui-bar mui-bar-nav pet-addad-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">新增收货地址</h1>
+		    <a class="mui-icon mui-pull-right">保存</a>
+		</header>
+    <div class="mui-content mui-input-group" id="entry">
+        <div class="mui-input-row hyg-g-input-row">
+            <span>*</span><label>收货人：</label>
+            <input type="text" class="mui-input-clear" name="shouhuoren" placeholder="" datatype="*" nullmsg="请填写收货人！" autofocus>
+        </div>
+        <div class="mui-input-row hyg-g-input-row">
+            <label>身份证：</label>
+            <input type="text" class="mui-input-clear" placeholder="" name="idcard">
+        </div>
+        <div class="mui-input-row hyg-g-input-row">
+            <span>*</span><label>手机号码：</label>
+            <input type="tel" class="mui-input-clear" placeholder="" name="mobile" datatype="m" nullmsg="请填写手机号码！" errormsg="请填写正确手机号码！">
+        </div>
+        <div class="mui-input-row hyg-g-input-row">
+            <label>邮政编码：</label>
+            <input type="text" datatype="p" errormsg="请输入正确的邮编" ignore="ignore" class="mui-input-clear" name="bianma" placeholder="">
+        </div>
+        <div id="city_china">
+            <div class="mui-input-row hyg-g-input-row">
+                <span>*</span><label for="province">省份</label>
+                <select class="province cxselect" name="province" id="province" datatype="*" nullmsg="请选择省份！"></select>
+            </div>
+            <div class="mui-input-row hyg-g-input-row">
+                <span>*</span> <label>城市</label>
+                <select class="city cxselect" name="city"></select>
+            </div>
+            <div class="mui-input-row hyg-g-input-row">
+                <span>*</span><label>地区</label>
+                <select class="area cxselect" name="area"></select>
+            </div>
+        </div>
+
+        <div class="mui-input-row hyg-g-input-row" style="height: 70px;">
+            <span>*</span><label>详细地址</label>
+            <textarea id="textarea" class="mui-input-clear" rows="5" placeholder="" style="height: 70px; padding: 15px;" datatype="*"
+                      nullmsg="请填写详细地址！" name="dizhi"></textarea>
+        </div>
+        <div class="mui-input-row hyg-g-input-row">
+            <label style="width: 46%">是否设为默认地址</label>
+            <div class="mui-switch  mui-switch-mini " id="mySwitch">
+                <div class="mui-switch-handle"></div>
+            </div>
+        </div>
+        <div style="display:none;">
+            <input type="text" name="isdefault" id="isdefault" value="N">
+        </div>
+    </div>
+</form>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-1.9.1.min.js"></script>
+		<script src="../js/jquery.cxselect.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Validform_v5.3.2_min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.ready(function(){
+		    /*三级联地址*/
+		    $.cxSelect.defaults.url = '../js/cityData.min.json';
+		    $('#city_china').cxSelect({
+		        selects: ['province', 'city', 'area'],
+		        nodata: 'none'
+		    });
+		
+		    $("#hyg-g-cancelbtn").on("click",function(){
+		        window.location.href="/user/userinfo/address";
+		
+		    });
+			})
+		</script>
+	</body>
+
+</html>

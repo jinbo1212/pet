@@ -1,0 +1,72 @@
+/* 
+* @Author: Marte
+* @Date:   2017-07-09 23:01:38
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-07-09 23:32:17
+*/
+.pet-order-header{
+    background:#fff;
+}
+.pet-order-header a{
+    color:#333;
+}
+.pet-order-nav{
+    background-color: #f7f7f7;
+    height: 36px;
+    display: -webkit-box;
+}
+.pet-order-nav a{
+    display: block;
+    cursor: pointer;
+    -webkit-box-align: stretch;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    text-align: center;
+    position: relative;
+}
+.pet-order-nav a:after{
+    content: '';
+    border-right: 1px solid #D5D5D5;
+    height: 1em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.7em;
+    display: block;
+}
+.pet-order-nav a span{
+    display: inline-block;
+    line-height: 34px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #666;
+    font-size: 14px;
+}
+.pet-order-nav a.pet-order-active span{
+    color: #df231c;
+    border-bottom: 2px solid #df231c;
+}
+.pet-order-list{
+    margin:0;
+    padding:0;
+}
+.pet-order-list p.pet-order-time{
+    padding:6px;
+    margin:0;
+    line-height:2;
+}
+.pet-order-list .pet-order-goods{
+    padding: 15px;
+    background: #fff;
+}
+.pet-order-list .pet-order-goods img{
+    width: 24%;
+    float:left;
+}
+.pet-order-list .pet-order-goods div{
+    width:76%;
+}
+.pet-order-list .pet-order-goods div p span{
+    color:#df231c;
+}
